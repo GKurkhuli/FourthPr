@@ -1,0 +1,12 @@
+<svg id="twotone-notifications-24px_copy" data-name="twotone-notifications-24px copy" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20">
+  <g id="Bounding_Boxes">
+    <path id="Shape" d="M0,0H20V20H0Z" fill="none"/>
+  </g>
+  <g id="Duotone" transform="translate(3.333 2.083)">
+    <g id="Group">
+      <path id="Shape-2" data-name="Shape" d="M3.333,0C1.258,0,0,1.683,0,3.75v5H6.667v-5C6.667,1.683,5.408,0,3.333,0Z" transform="translate(3.333 3.333)" fill="#909191" opacity="0.3"/>
+      <path id="Shape-3" data-name="Shape" d="M1.667,1.667A1.672,1.672,0,0,0,3.333,0H0A1.672,1.672,0,0,0,1.667,1.667Z" transform="translate(5 14.583)" fill="#909191"/>
+      <path id="Shape-4" data-name="Shape" d="M13.334,13.75H0v-.833L1.667,11.25V7.083A5.905,5.905,0,0,1,2.648,3.7,4.6,4.6,0,0,1,5.417,1.817V1.25a1.25,1.25,0,1,1,2.5,0v.567A4.6,4.6,0,0,1,10.689,3.7a5.911,5.911,0,0,1,.978,3.38V11.25l1.667,1.667v.832ZM6.666,3.334c-1.962,0-3.333,1.542-3.333,3.749v5H10v-5C10,4.875,8.629,3.334,6.666,3.334Z" transform="translate(0 0)" fill="#909191"/>
+    </g>
+  </g>
+</svg>

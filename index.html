@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Project 4</title>
+        <link rel="stylesheet" href="src/css/style.css">
+        <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;600;700;800;900&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+        <script type="module" src="https://unpkg.com/ionicons@5.1.2/dist/ionicons/ionicons.esm.js"></script>
+    </head>
+
+    <body>
+        <section class="form" id="form">
+            <div class="form__sidebar">
+                <input type="checkbox" class="form__sidebar__show__checkbox" id="form__sidebar__show">
+                <label for="form__sidebar__show" class="form__sidebar__show"><p><ion-icon name="chevron-forward-outline"></ion-icon></p></label>
+                <div class="form__sidebar__menu">
+                    <div class="form__sidebar__menu__logo">
+                        <img src="src/img/SVG/livecaller.svg" alt="livecaller">
+                    </div>
+
+                    <div class="form__sidebar__menu__content">
+                        <ul class = "form__sidebar__menu__content-main">
+                            <li>General
+                                <ul class = "form__sidebar__menu__content-sub">
+                                    <li>    
+                                        <button class="form__sidebar__menu__content-sub-button">
+                                            <div class="form__sidebar__menu__content-sub-button-logo"><img src="src/img/SVG/Icon_dash.svg" alt=""></div>
+                                            <div class="form__sidebar__menu__content-sub-button-description"><p>Dashboard</p></div>
+                                            <div class="form__sidebar__menu__content-sub-button-num"><p>2</p></div>
+                                        </button>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>Analytics
+                                <ul class = "form__sidebar__menu__content-sub">
+                                    <li>    
+                                        <button class="form__sidebar__menu__content-sub-button">
+                                            <div class="form__sidebar__menu__content-sub-button-logo"><img src="src/img/SVG/chart-bar.svg" alt=""></div>
+                                            <div class="form__sidebar__menu__content-sub-button-description"><p>Answered</p></div>
+                                            <div class="form__sidebar__menu__content-sub-button-num"><p>2</p></div>
+                                        </button>
+                                    </li>
+                                    <li>    
+                                        <button class="form__sidebar__menu__content-sub-button">
+                                            <div class="form__sidebar__menu__content-sub-button-logo"><img src="src/img/SVG/Chart-line.svg" alt=""></div>
+                                            <div class="form__sidebar__menu__content-sub-button-description"><p>Unanswered</p></div>
+                                            <div class="form__sidebar__menu__content-sub-button-num"><p>2</p></div>
+                                        </button>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>Team Management
+                                <ul class = "form__sidebar__menu__content-sub">
+                                    <li>    
+                                        <button class="form__sidebar__menu__content-sub-button">
+                                            <div class="form__sidebar__menu__content-sub-button-logo"><img src="src/img/SVG/Users.svg" alt=""></div>
+                                            <div class="form__sidebar__menu__content-sub-button-description"><p>Users</p></div>
+                                            <div class="form__sidebar__menu__content-sub-button-num"><p>2</p></div>
+                                        </button>
+                                    </li>
+                                    <li>    
+                                        <button class="form__sidebar__menu__content-sub-button">
+                                            <div class="form__sidebar__menu__content-sub-button-logo"><img src="src/img/SVG/Departments.svg" alt=""></div>
+                                            <div class="form__sidebar__menu__content-sub-button-description"><p>Departments</p></div>
+                                            <div class="form__sidebar__menu__content-sub-button-num"><p>2</p></div>
+                                        </button>
+                                    </li>
+                                    <li>    
+                                        <button class="form__sidebar__menu__content-sub-button">
+                                            <div class="form__sidebar__menu__content-sub-button-logo"><img src="src/img/SVG/Devices.svg" alt=""></div>
+                                            <div class="form__sidebar__menu__content-sub-button-description"><p>Devices</p></div>
+                                            <div class="form__sidebar__menu__content-sub-button-num"><p>2</p></div>
+                                        </button>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>Visitors
+                                <ul class = "form__sidebar__menu__content-sub">
+                                    <li>    
+                                        <button class="form__sidebar__menu__content-sub-button">
+                                            <div class="form__sidebar__menu__content-sub-button-logo"><img src="/src/img/SVG/CallerSettings.svg" alt=""></div>
+                                            <div class="form__sidebar__menu__content-sub-button-description"><p>Caller settings</p></div>
+                                            <div class="form__sidebar__menu__content-sub-button-num"><p>2</p></div>
+                                        </button>
+                                    </li>
+                                    <li>    
+                                        <button class="form__sidebar__menu__content-sub-button">
+                                            <div class="form__sidebar__menu__content-sub-button-logo"><img src="/src/img/SVG/BlockedVisit.svg" alt=""></div>
+                                            <div class="form__sidebar__menu__content-sub-button-description"><p>Blocked visitors</p></div>
+                                            <div class="form__sidebar__menu__content-sub-button-num"><p>2</p></div>
+                                        </button>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>Widgets
+                                <ul class = "form__sidebar__menu__content-sub">
+                                    <li>    
+                                        <button class="form__sidebar__menu__content-sub-button">
+                                            <div class="form__sidebar__menu__content-sub-button-logo"><img src="/src/img/SVG/MyWidgets.svg" alt=""></div>
+                                            <div class="form__sidebar__menu__content-sub-button-description"><p>My widgets</p></div>
+                                            <div class="form__sidebar__menu__content-sub-button-num"><p>2</p></div>
+                                        </button>
+                                    </li>
+                                    <li>    
+                                        <button class="form__sidebar__menu__content-sub-button">
+                                            <div class="form__sidebar__menu__content-sub-button-logo"><img src="/src/img/SVG/Generate.svg" alt=""></div>
+                                            <div class="form__sidebar__menu__content-sub-button-description"><p>Generate</p></div>
+                                            <div class="form__sidebar__menu__content-sub-button-num"><p>2</p></div>
+                                        </button>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>Account
+                                <ul class = "form__sidebar__menu__content-sub">
+                                    <li>    
+                                        <button class="form__sidebar__menu__content-sub-button">
+                                            <div class="form__sidebar__menu__content-sub-button-logo"><img src="/src/img/SVG/account_balance_wallet.svg" alt=""></div>
+                                            <div class="form__sidebar__menu__content-sub-button-description"><p>Billing</p></div>
+                                            <div class="form__sidebar__menu__content-sub-button-num"><p>2</p></div>
+                                        </button>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="form__sidebar__menu__button">
+                        <h4 class="form__sidebar__menu__button__par">Status: Free trial</h4>
+                        <button class="form__sidebar__menu__button__button upgradeButton" >UPGRADE</button>
+                    </div>
+                </div>
+
+                <div class="form__sidebar__mark">
+                    <a href="#" class="form__sidebar__mark__link">Help & Feedback</a>
+                    <h2 class="form__sidebar__mark__page">LIVECALLER.IO 2019</h2>
+                </div>
+            </div>
+
+            <div class="form__main">
+                <div class="form__main__user">
+                    <div class="form__main__user__search">
+                        <input type="text" placeholder="Search">
+                        <ion-icon name="search-outline" class="form__main__user__search__logo"></ion-icon>
+                    </div>
+                    <button class="buttonGreen form__main__user__button-green">Serve 1 Request</button>
+                    <button class="form__main__user__button-notification"><img src="/src/img/SVG/twotone-notifications-24px copy.svg" alt=""></button>
+                    <div class="form__main__user__account">
+                        <div class="form__main__user__account-txt">
+                            <h5 class="form__main__user__account-txt__userName">Saul Berenson</h5>
+                            <p class="form__main__user__account-txt__userStatus">OFFLINE</p>
+                        </div>
+                        <img src="" alt="" class="form__main__user__account-avatar">
+                        <div class="form__main__user__account-drowpDown">
+                            <img src="/src/img/SVG/dropdown.svg" alt="">
+                        </div>
+                    </div>
+                </div>
+                <div class="form__main__content">
+                    
+                    <img class="form__main__content-background" src="src/img/SVG/logo.svg" alt="logo">
+
+                    <div class="form__main__content__billing">
+                        <div class="form__main__content__billing__pack">
+                            <div class="form__main__content__billing__pack__upgrade">
+                                <img src="src/img/Path 3205.svg" alt="logo">
+                                <p>Upgrade</p>
+                            </div>
+                            <div class="form__main__content__billing__pack__radio">
+                                <div class="form__main__content__billing__pack__radio__box">
+                                    <input type="radio"id="radio-annually" name="pack_selector" checked>
+                                    <label  for="radio-annually">Annually</label>
+                                </div>
+                                <div class="form__main__content__billing__pack__radio__box">
+                                    <input type="radio"  id="radio-monthly" name="pack_selector">
+                                    <label for="radio-monthly">Monthly</label>
+                                    
+                                </div>
+                            </div>
+                            
+                            <button class="form__main__content__billing__pack__button"><ion-icon name="close" class="form__main__content__billing__pack__button__sign"></ion-icon></button>
+                            <p class="form__main__content__billing__pack__text">Save 30% with annual billing, 2 month free</p>
+                        </div>
+                        <div class="form__main__content__billing__servicePack">
+                            <div class="form__main__content__billing__servicePack__price">
+                                <h3 class="form__main__content__billing__servicePack__price__header">Service pack</h3>
+                                
+                                <div class="form__main__content__billing__servicePack__price__agentNum">
+                                    <p>chose the number of agents</p>
+                                    <div class="form__main__content__billing__servicePack__price__agentNum-box">
+                                        <input type="number" id="agentNumber" min="1" value="1">
+                                        <div class="">
+                                            <button class="InputNum-Increment InputNum"><ion-icon name="caret-up-outline" class="InputNum__arrow"></ion-icon></button>
+                                            <button class="InputNum-Decrement InputNum"><ion-icon name="caret-down-outline" class="InputNum__arrow"></ion-icon></button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form__main__content__billing__servicePack__price__packs">
+                                    <div class="form__main__content__billing__servicePack__price__packs__checkbox">
+                                        <input type="checkbox" name="sevices" id="chat" checked>
+                                        <label for="chat">
+                                            <div class="form__main__content__billing__servicePack__price__packs__checkbox-text">
+                                                <h4>Web Chat</h4>
+                                                <p>Chat in real time with your web users</p>
+                                            </div>
+                                            <div class="form__main__content__billing__servicePack__price__packs__checkbox-price">
+                                                <p><span class="price__int">$4.</span><span class="price__dec">00</span><span class="price__per">/yr.</span></p>
+                                            </div>
+                                        </label>
+                                    </div>
+                                    <div class="form__main__content__billing__servicePack__price__packs__checkbox">
+                                        <input type="checkbox"  name="sevices" id="call">
+                                        <label for="call">
+                                            <div class="form__main__content__billing__servicePack__price__packs__checkbox-text">
+                                                <h4>Web Call</h4>
+                                                <p>Let your web visitors call you from browser</p>
+                                            </div>
+                                            <div class="form__main__content__billing__servicePack__price__packs__checkbox-price">
+
+                                            </div>
+                                        </label>
+                                    </div>
+                                    <div class="form__main__content__billing__servicePack__price__packs__checkbox">
+                                        <input type="checkbox" name="sevices" id="multyCh">
+                                        <label for="multyCh">
+                                            <div class="form__main__content__billing__servicePack__price__packs__checkbox-text">
+                                                <h4>Multy Channel</h4>
+                                                <p>Some text Some text Some text Some text</p>
+                                            </div>
+                                            <div class="form__main__content__billing__servicePack__price__packs__checkbox-price">
+
+                                            </div>
+                                        </label>
+                                    </div>
+                                    <div class="form__main__content__billing__servicePack__price__packs__checkbox">
+                                        <input type="checkbox" name="sevices" id="coBrow" checked>
+                                        <label for="coBrow">
+                                            <div class="form__main__content__billing__servicePack__price__packs__checkbox-text">
+                                                <h4>Co-Browsing</h4>
+                                                <p>Guide your visitors when they struggle</p>
+                                            </div>
+                                            <div class="form__main__content__billing__servicePack__price__packs__checkbox-price">
+
+                                            </div>
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form__main__content__billing__servicePack__calcPr">
+                                <div class="form__main__content__billing__servicePack__calcPr__topTxt">
+                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa ullam illo, id quas quam unde, officiis rerum voluptatem in</p>
+                                </div>
+
+                                <div class="form__main__content__billing__servicePack__calcPr__price">
+                                    <div class="form__main__content__billing__servicePack__calcPr__price__each">
+                                        <div class="calcPrice__List__name form__main__content__billing__servicePack__calcPr__price__each__name">
+                                            <p>Platform Price</p>
+                                        </div>
+                                        <div class="calcPrice__List__price form__main__content__billing__servicePack__calcPr__price__each__price">
+                                            <p><span class="list-price-int">$10.</span><span class="list-price-dec">00</span><span class="list-price-per">/yr</span><span class="list-price-question"><ion-icon name="help-circle-outline"></ion-icon></span></p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="form__main__content__billing__servicePack__calcPr__static">
+                                    <div class="form__main__content__billing__servicePack__calcPr__static__code">
+                                        <input type="number" class="form__main__content__billing__servicePack__calcPr__static__code__text">
+                                        <button class="form__main__content__billing__servicePack__calcPr__static__code__button">Apply code</button>
+                                    </div>
+
+                                    <div class="form__main__content__billing__servicePack__calcPr__static__total">
+                                        <div class="calcPrice__List__name form__main__content__billing__servicePack__calcPr__static__total__name">
+                                            <p>Total</p>
+                                        </div>
+                                        <div class="calcPrice__List__price form__main__content__billing__servicePack__calcPr__static__total__price">
+                                            <p><span class="price__int">$4.</span><span class="price__dec">00</span><span class="price__per">/yr.</span><span class="price__for">(x3 users)</span></p>
+                                        </div>
+                                    </div>
+                                    <button class="upgradeButton form__main__content__billing__servicePack__calcPr__static__button">UPGRADE</button>
+                                    <p class=" form__main__content__billing__servicePack__calcPr__static__save">Save 30% with annual billinging, 2 month free</p>
+                                </div>
+                                                        
+                            </div>
+                        </div>
+                    </div>
+
+
+                </div>
+
+
+
+            </div>
+            
+        </section>
+    </body>
+
+
+</html>

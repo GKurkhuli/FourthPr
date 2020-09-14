@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="35" height="35" viewBox="0 0 35 35">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #5265e8;
+      }
+
+      .cls-2 {
+        filter: url(#Path_357);
+      }
+
+      .cls-3 {
+        filter: url(#Path_355);
+      }
+    </style>
+    <filter id="Path_355" x="0" y="0" width="35" height="34.985" filterUnits="userSpaceOnUse">
+      <feOffset dy="7" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="3.5" result="blur"/>
+      <feFlood flood-color="#5da3ff" flood-opacity="0.302"/>
+      <feComposite operator="in" in2="blur"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+    <filter id="Path_357" x="0.016" y="0.031" width="34.984" height="34.969" filterUnits="userSpaceOnUse">
+      <feOffset dy="7" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="3.5" result="blur-2"/>
+      <feFlood flood-color="#5da3ff" flood-opacity="0.302"/>
+      <feComposite operator="in" in2="blur-2"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+  </defs>
+  <g id="_0a6e8b98a0b8391aa544d471c5a19918" data-name="0a6e8b98a0b8391aa544d471c5a19918" transform="translate(10.5 3.5)">
+    <path id="Path_354" data-name="Path 354" class="cls-1" d="M91.9,91.3Z" transform="translate(-90.869 -90.269)"/>
+    <g class="cls-3" transform="matrix(1, 0, 0, 1, -10.5, -3.5)">
+      <path id="Path_355-2" data-name="Path 355" class="cls-1" d="M22.83,23.385A1.166,1.166,0,0,1,22,23.042L10.343,11.4A1.17,1.17,0,1,1,12,9.742L23.657,21.388a1.169,1.169,0,0,1-.827,2Z" transform="translate(0.5 -5.9)"/>
+    </g>
+    <path id="Path_356" data-name="Path 356" class="cls-1" d="M908.1,93.8Z" transform="translate(-895.131 -92.738)"/>
+    <g class="cls-2" transform="matrix(1, 0, 0, 1, -10.5, -3.5)">
+      <path id="Path_357-2" data-name="Path 357" class="cls-1" d="M12.47,25.869a1.17,1.17,0,0,1-.827-2L23.285,12.243A1.17,1.17,0,0,1,24.941,13.9L13.3,25.526a1.168,1.168,0,0,1-.827.343Z" transform="translate(-0.78 -8.37)"/>
+    </g>
+  </g>
+</svg>
