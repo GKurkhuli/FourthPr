@@ -49,7 +49,7 @@ var sidebar = new Vue({
         Dashboard :new menuButton(id = "#Dashboard", notifications = 2, page2show = ""),
         Answered : new menuButton(id = "#Answered", notifications = 0, page2show = ""),
         Unanswered : new menuButton(id = "#Unanswered", notifications = 0, page2show = ""),
-        Users : new menuButton(id = "#Dashboard", notifications = 0, page2show = ""),
+        Users : new menuButton(id = "#Users", notifications = 0, page2show = ""),
         Departments : new menuButton(id = "#Departments", notifications = 0, page2show = ""),
         Devices : new menuButton(id = "#Devices", notifications = 0, page2show = ""),
         CallerSett : new menuButton(id = "#CallerSett", notifications = 0, page2show = ""),
