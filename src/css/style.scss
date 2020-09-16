@@ -294,7 +294,8 @@ html{
                         border-top-left-radius: 1.5rem;
                         border-bottom-left-radius: 1.5rem;
                         background-color: transparent;                        
-
+                        transition: all .25s;
+                        
                         &-logo,
                         &-description,
                         &-num{

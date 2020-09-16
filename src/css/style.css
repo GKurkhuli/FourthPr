@@ -401,6 +401,8 @@ html {
   border-top-left-radius: 1.5rem;
   border-bottom-left-radius: 1.5rem;
   background-color: transparent;
+  -webkit-transition: all .25s;
+  transition: all .25s;
 }
 
 .form__sidebar__menu__content-sub-button-logo, .form__sidebar__menu__content-sub-button-description, .form__sidebar__menu__content-sub-button-num {
