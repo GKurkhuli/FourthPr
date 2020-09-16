@@ -11,8 +11,8 @@
 
     <body>
         <section class="form" id="form">
-            <div class="form__sidebar">
-                <input type="checkbox" class="form__sidebar__show__checkbox" id="form__sidebar__show">
+            <div class="form__sidebar" v-bind:class = "{form__sidebar__width:checked}">
+                <input type="checkbox" class="form__sidebar__show__checkbox" id="form__sidebar__show" v-on:change = "sidebar_show_hide">
                 <label for="form__sidebar__show" class="form__sidebar__show"><p><ion-icon name="chevron-forward-outline"></ion-icon></p></label>
                 <div class="form__sidebar__menu">
                     <div class="form__sidebar__menu__logo">
@@ -24,10 +24,10 @@
                             <li>General
                                 <ul class = "form__sidebar__menu__content-sub">
                                     <li>    
-                                        <button class="form__sidebar__menu__content-sub-button">
+                                        <button class="form__sidebar__menu__content-sub-button" id="Dashboard" v-on:click = "openPage(Dashboard)">
                                             <div class="form__sidebar__menu__content-sub-button-logo"><img src="src/img/SVG/Icon_dash.svg" alt=""></div>
                                             <div class="form__sidebar__menu__content-sub-button-description"><p>Dashboard</p></div>
-                                            <div class="form__sidebar__menu__content-sub-button-num"><p>2</p></div>
+                                            <div class="form__sidebar__menu__content-sub-button-num" v-show = "Dashboard.notifications > 0"><p>{{Dashboard.notifications}}</p></div>
                                         </button>
                                     </li>
                                 </ul>
@@ -35,17 +35,17 @@
                             <li>Analytics
                                 <ul class = "form__sidebar__menu__content-sub">
                                     <li>    
-                                        <button class="form__sidebar__menu__content-sub-button">
+                                        <button class="form__sidebar__menu__content-sub-button" id="Answered" v-on:click = "openPage(Answered)">
                                             <div class="form__sidebar__menu__content-sub-button-logo"><img src="src/img/SVG/chart-bar.svg" alt=""></div>
                                             <div class="form__sidebar__menu__content-sub-button-description"><p>Answered</p></div>
-                                            <div class="form__sidebar__menu__content-sub-button-num"><p>2</p></div>
+                                            <div class="form__sidebar__menu__content-sub-button-num" v-show = "Answered.notifications > 0"><p>{{Answered.notifications}}</p></div>
                                         </button>
                                     </li>
                                     <li>    
-                                        <button class="form__sidebar__menu__content-sub-button">
+                                        <button class="form__sidebar__menu__content-sub-button" id="Unanswered" v-on:click = "openPage(Unanswered)">
                                             <div class="form__sidebar__menu__content-sub-button-logo"><img src="src/img/SVG/Chart-line.svg" alt=""></div>
                                             <div class="form__sidebar__menu__content-sub-button-description"><p>Unanswered</p></div>
-                                            <div class="form__sidebar__menu__content-sub-button-num"><p>2</p></div>
+                                            <div class="form__sidebar__menu__content-sub-button-num" v-show = "Unanswered.notifications > 0"><p>{{Unanswered.notifications}}</p></div>
                                         </button>
                                     </li>
                                 </ul>
@@ -53,24 +53,24 @@
                             <li>Team Management
                                 <ul class = "form__sidebar__menu__content-sub">
                                     <li>    
-                                        <button class="form__sidebar__menu__content-sub-button">
+                                        <button class="form__sidebar__menu__content-sub-button" id="Users" v-on:click = "openPage(Users)">
                                             <div class="form__sidebar__menu__content-sub-button-logo"><img src="src/img/SVG/Users.svg" alt=""></div>
                                             <div class="form__sidebar__menu__content-sub-button-description"><p>Users</p></div>
-                                            <div class="form__sidebar__menu__content-sub-button-num"><p>2</p></div>
+                                            <div class="form__sidebar__menu__content-sub-button-num" v-show = "Users.notifications > 0"><p>{{Users.notifications}}</p></div>
                                         </button>
                                     </li>
                                     <li>    
-                                        <button class="form__sidebar__menu__content-sub-button">
+                                        <button class="form__sidebar__menu__content-sub-button" id="Departments" v-on:click = "openPage(Departments)">
                                             <div class="form__sidebar__menu__content-sub-button-logo"><img src="src/img/SVG/Departments.svg" alt=""></div>
                                             <div class="form__sidebar__menu__content-sub-button-description"><p>Departments</p></div>
-                                            <div class="form__sidebar__menu__content-sub-button-num"><p>2</p></div>
+                                            <div class="form__sidebar__menu__content-sub-button-num" v-show = "Departments.notifications > 0"><p>{{Departments.notifications}}</p></div>
                                         </button>
                                     </li>
                                     <li>    
-                                        <button class="form__sidebar__menu__content-sub-button">
+                                        <button class="form__sidebar__menu__content-sub-button" id="Devices" v-on:click = "openPage(Devices)">
                                             <div class="form__sidebar__menu__content-sub-button-logo"><img src="src/img/SVG/Devices.svg" alt=""></div>
                                             <div class="form__sidebar__menu__content-sub-button-description"><p>Devices</p></div>
-                                            <div class="form__sidebar__menu__content-sub-button-num"><p>2</p></div>
+                                            <div class="form__sidebar__menu__content-sub-button-num" v-show = "Devices.notifications > 0"><p>{{Devices.notifications}}</p></div>
                                         </button>
                                     </li>
                                 </ul>
@@ -78,17 +78,17 @@
                             <li>Visitors
                                 <ul class = "form__sidebar__menu__content-sub">
                                     <li>    
-                                        <button class="form__sidebar__menu__content-sub-button">
+                                        <button class="form__sidebar__menu__content-sub-button" id="CallerSett" v-on:click = "openPage(CallerSett)">
                                             <div class="form__sidebar__menu__content-sub-button-logo"><img src="/src/img/SVG/CallerSettings.svg" alt=""></div>
                                             <div class="form__sidebar__menu__content-sub-button-description"><p>Caller settings</p></div>
-                                            <div class="form__sidebar__menu__content-sub-button-num"><p>2</p></div>
+                                            <div class="form__sidebar__menu__content-sub-button-num" v-show = "CallerSett.notifications > 0"><p>{{CallerSett.notifications}}</p></div>
                                         </button>
                                     </li>
                                     <li>    
-                                        <button class="form__sidebar__menu__content-sub-button">
+                                        <button class="form__sidebar__menu__content-sub-button" id="BlockedVis" v-on:click = "openPage(BlockedVis)">
                                             <div class="form__sidebar__menu__content-sub-button-logo"><img src="/src/img/SVG/BlockedVisit.svg" alt=""></div>
                                             <div class="form__sidebar__menu__content-sub-button-description"><p>Blocked visitors</p></div>
-                                            <div class="form__sidebar__menu__content-sub-button-num"><p>2</p></div>
+                                            <div class="form__sidebar__menu__content-sub-button-num" v-show = "BlockedVis.notifications > 0"><p>{{BlockedVis.notifications}}</p></div>
                                         </button>
                                     </li>
                                 </ul>
@@ -96,17 +96,17 @@
                             <li>Widgets
                                 <ul class = "form__sidebar__menu__content-sub">
                                     <li>    
-                                        <button class="form__sidebar__menu__content-sub-button">
+                                        <button class="form__sidebar__menu__content-sub-button" id="MyWidgets" v-on:click = "openPage(MyWidgets)">
                                             <div class="form__sidebar__menu__content-sub-button-logo"><img src="/src/img/SVG/MyWidgets.svg" alt=""></div>
                                             <div class="form__sidebar__menu__content-sub-button-description"><p>My widgets</p></div>
-                                            <div class="form__sidebar__menu__content-sub-button-num"><p>2</p></div>
+                                            <div class="form__sidebar__menu__content-sub-button-num" v-show = "MyWidgets.notifications > 0"><p>{{MyWidgets.notifications}}</p></div>
                                         </button>
                                     </li>
                                     <li>    
-                                        <button class="form__sidebar__menu__content-sub-button">
+                                        <button class="form__sidebar__menu__content-sub-button" id="Generate" v-on:click = "openPage(Generate)">
                                             <div class="form__sidebar__menu__content-sub-button-logo"><img src="/src/img/SVG/Generate.svg" alt=""></div>
                                             <div class="form__sidebar__menu__content-sub-button-description"><p>Generate</p></div>
-                                            <div class="form__sidebar__menu__content-sub-button-num"><p>2</p></div>
+                                            <div class="form__sidebar__menu__content-sub-button-num" v-show = "Generate.notifications > 0"><p>{{Generate.notifications}}</p></div>
                                         </button>
                                     </li>
                                 </ul>
@@ -114,10 +114,10 @@
                             <li>Account
                                 <ul class = "form__sidebar__menu__content-sub">
                                     <li>    
-                                        <button class="form__sidebar__menu__content-sub-button">
+                                        <button class="form__sidebar__menu__content-sub-button" id="Billing" v-on:click = "openPage(Billing)">
                                             <div class="form__sidebar__menu__content-sub-button-logo"><img src="/src/img/SVG/account_balance_wallet.svg" alt=""></div>
                                             <div class="form__sidebar__menu__content-sub-button-description"><p>Billing</p></div>
-                                            <div class="form__sidebar__menu__content-sub-button-num"><p>2</p></div>
+                                            <div class="form__sidebar__menu__content-sub-button-num" v-show = "Billing.notifications > 0"><p>{{Billing.notifications}}</p></div>
                                         </button>
                                     </li>
                                 </ul>
@@ -145,22 +145,25 @@
                     </div>
                     <button class="buttonGreen form__main__user__button-green">Serve 1 Request</button>
                     <button class="form__main__user__button-notification"><img src="/src/img/SVG/twotone-notifications-24px copy.svg" alt=""></button>
+                    
                     <div class="form__main__user__account">
                         <div class="form__main__user__account-txt">
-                            <h5 class="form__main__user__account-txt__userName">Saul Berenson</h5>
-                            <p class="form__main__user__account-txt__userStatus">OFFLINE</p>
+                            <h5 class="form__main__user__account-txt__userName">{{fname + ' ' + lname}}</h5>
+                            <p v-show="!statusOnline" class="form__main__user__account-txt__userStatus">OFFLINE</p>
+                            <p v-show="statusOnline" class="form__main__user__account-txt__userStatus form__main__user__account-txt__userStatus-online">ONLINE</p>
                         </div>
-                        <img src="" alt="" class="form__main__user__account-avatar">
+                        <img v-bind:src="avatar" alt="" class="form__main__user__account-avatar">
                         <div class="form__main__user__account-drowpDown">
                             <img src="/src/img/SVG/dropdown.svg" alt="">
                         </div>
                     </div>
+
                 </div>
                 <div class="form__main__content">
                     
                     <img class="form__main__content-background" src="src/img/SVG/logo.svg" alt="logo">
 
-                    <div class="form__main__content__billing">
+                    <div class="form__main__content__billing form__main__content__box">
                         <div class="form__main__content__billing__pack">
                             <div class="form__main__content__billing__pack__upgrade">
                                 <img src="src/img/Path 3205.svg" alt="logo">
@@ -178,7 +181,7 @@
                                 </div>
                             </div>
                             
-                            <button class="form__main__content__billing__pack__button"><ion-icon name="close" class="form__main__content__billing__pack__button__sign"></ion-icon></button>
+                            <button class="form__main__content__billing__pack__button" v-on:click = "closePage" id="closeBilling"><ion-icon name="close" class="form__main__content__billing__pack__button__sign"></ion-icon></button><!--v-on:click = "display=false"-->
                             <p class="form__main__content__billing__pack__text">Save 30% with annual billing, 2 month free</p>
                         </div>
                         <div class="form__main__content__billing__servicePack">
@@ -187,11 +190,11 @@
                                 
                                 <div class="form__main__content__billing__servicePack__price__agentNum">
                                     <p>chose the number of agents</p>
-                                    <div class="form__main__content__billing__servicePack__price__agentNum-box">
-                                        <input type="number" id="agentNumber" min="1" value="1">
+                                    <div class="form__main__content__billing__servicePack__price__agentNum-box" id="_agentNumber">
+                                        <input type="number" id="agentNumber"  v-on:input="changeagentNumber" v-bind:value="agentNumber">
                                         <div class="">
-                                            <button class="InputNum-Increment InputNum"><ion-icon name="caret-up-outline" class="InputNum__arrow"></ion-icon></button>
-                                            <button class="InputNum-Decrement InputNum"><ion-icon name="caret-down-outline" class="InputNum__arrow"></ion-icon></button>
+                                            <button class="InputNum-Increment InputNum" v-on:click="incAgentNum"><ion-icon name="caret-up-outline" class="InputNum__arrow"></ion-icon></button>
+                                            <button class="InputNum-Decrement InputNum" v-on:click="decAgentNum"><ion-icon name="caret-down-outline" class="InputNum__arrow"></ion-icon></button>
                                         </div>
                                     </div>
                                 </div>
@@ -273,7 +276,7 @@
                                             <p>Total</p>
                                         </div>
                                         <div class="calcPrice__List__price form__main__content__billing__servicePack__calcPr__static__total__price">
-                                            <p><span class="price__int">$4.</span><span class="price__dec">00</span><span class="price__per">/yr.</span><span class="price__for">(x3 users)</span></p>
+                                            <p><span class="price__int">$4.</span><span class="price__dec">00</span><span class="price__per">/yr.</span><span class="price__for">(x{{ agentNumber }} users)</span></p>
                                         </div>
                                     </div>
                                     <button class="upgradeButton form__main__content__billing__servicePack__calcPr__static__button">UPGRADE</button>
@@ -292,6 +295,8 @@
             </div>
             
         </section>
+        <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+        <script src="/src/js/properties.js"></script>
     </body>
 
 

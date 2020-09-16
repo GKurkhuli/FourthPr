@@ -150,6 +150,8 @@ li{
         cursor: pointer;
     }
 }
+.displayNone{display: none !important;}
+
 *{
     margin: 0;
     padding: 0;
@@ -199,6 +201,16 @@ html{
             opacity: .9;
             z-index: 1000;
         }
+
+        &__width{
+            width: 15.4166%;
+            @media(max-width: 1100px){width: 20% !important;}
+            @media(max-width: 850px){width: 25% !important;}
+            @media(max-width: 660px){width: 30% !important;}
+            @media(max-width: 590px){width: 35% !important;}
+            @media(max-width: 450px){width: 40% !important;}
+        }
+        
 
         &__show{
             @include centerVertical();
@@ -281,9 +293,7 @@ html{
                         height: 3rem;
                         border-top-left-radius: 1.5rem;
                         border-bottom-left-radius: 1.5rem;
-                        background-color: transparent;//rgba(255, 255, 255, 0.1);
-
-                        
+                        background-color: transparent;                        
 
                         &-logo,
                         &-description,
@@ -316,6 +326,7 @@ html{
                             color: #5265e8;
                             & p{@include center();}
                         }
+                        &-pressed{background-color:rgba(255, 255, 255, 0.1)!important;}
                     }
                 }
             }
@@ -488,10 +499,15 @@ html{
                @include center();
                width: 50%;
            }
-            &__billing{
+            &__box{
                 @include center();
                 width: calc(100% - 3.4rem);
                 height: calc(100% - 3.6rem);
+            }
+
+            
+
+            &__billing{
                 background-color: #fff;
                 box-shadow: 0 1px 10px 0 rgba(82, 101, 232, 0.1);
                 
@@ -782,9 +798,6 @@ html{
                                     font-weight: 600;
                                     color: #7c7d9c;
                                 }
-                                &__price{
-
-                                }
                             }
                         }
                         &__static{
@@ -845,9 +858,6 @@ html{
                                    // line-height: 2.5;
                                     color: #1b253a;
                                     & p{@include centerVertical();right:0}
-                                }
-                                &__price{
-
                                 }
                             }
 
