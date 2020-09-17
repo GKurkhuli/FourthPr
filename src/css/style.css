@@ -157,7 +157,8 @@ li {
 }
 
 .displayNone {
-  display: none !important;
+  opacity: 0 !important;
+  visibility: hidden !important;
 }
 
 * {
@@ -704,6 +705,8 @@ html {
 }
 
 .form__main__content__box {
+  -webkit-transition: all .5s;
+  transition: all .5s;
   position: absolute;
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);

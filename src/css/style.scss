@@ -150,7 +150,10 @@ li{
         cursor: pointer;
     }
 }
-.displayNone{display: none !important;}
+.displayNone{
+    opacity: 0 !important;
+    visibility: hidden !important;
+}
 
 *{
     margin: 0;
@@ -293,9 +296,9 @@ html{
                         height: 3rem;
                         border-top-left-radius: 1.5rem;
                         border-bottom-left-radius: 1.5rem;
-                        background-color: transparent;                        
-                        transition: all .25s;
-                        
+                        background-color: transparent;
+                        transition: all .25s;                        
+
                         &-logo,
                         &-description,
                         &-num{
@@ -501,6 +504,7 @@ html{
                width: 50%;
            }
             &__box{
+                transition: all .5s;
                 @include center();
                 width: calc(100% - 3.4rem);
                 height: calc(100% - 3.6rem);
