@@ -1,10 +1,17 @@
-var user = new Vue({
-    el: ".form__main__user__account",
+var userMain  = new Vue({
+    el: ".form__main__user",
     data: {
-        fname: "Saul",
-        lname: "Berenson",
-        avatar: "https://picsum.photos/200?' + Math.floor(Math.random()*200)+'",
-        statusOnline: true 
+        fname : "Saul",
+        lname : "Berenson",
+        avatar : "https://picsum.photos/200?' + Math.floor(Math.random()*200)+'",
+        statusOnline : true,
+        
+        search:"",
+    },
+    computed: {
+        name(){
+            return this.fname + " " + this.lname
+        },
     }
 });
 
@@ -12,6 +19,26 @@ var billing = new Vue({
     el: ".form__main__content__billing",
     data:{
         agentNumber: 1,
+        close : false,
+        pack_selected : "Annually",
+        prices: {
+            "Annually":{
+                platform : 10,
+                webChat : 4,
+                webCall : 3,
+                multyCh : 5,
+                coBrow : 0,
+                per : "yr"
+            },
+            "Monthly":{
+                platform : 5,
+                webChat : 2,
+                webCall : 1,
+                multyCh : 2,
+                coBrow : 0,
+                per : "mo"
+            }
+        }
     },
     methods:{
         incAgentNum: function(){
@@ -21,22 +48,21 @@ var billing = new Vue({
             if(this.agentNumber > 1) this.agentNumber -= 1
         },
         changeagentNumber: function(){
-            var num = parseInt(document.querySelector("#agentNumber").value);
-            if(num > 1)this.agentNumber = num;
-            else document.querySelector("#agentNumber").value = this.agentNumber;
+            if(this.agentNumber < 1) this.agentNumber = 1
         },
         closePage: function(){
-            document.querySelector(".form__main__content__billing").classList.add("displayNone");
-            document.getElementById("Billing").classList.remove("form__sidebar__menu__content-sub-button-pressed")
-        } 
+            this.close = true;
+            sidebar.sidebarMenu.Billing.checked = false;
+        }
     }
 })
 
 class menuButton{
-    constructor(id,notifications,page2show){
+    constructor(id,notifications,page2show, checked){
         this.id = id;
         this.page2show = page2show;
         this.notifications = notifications;
+        this.checked = checked;
     }
 }
 
@@ -45,40 +71,31 @@ var sidebar = new Vue({
     el: ".form__sidebar",
     data:{
         checked: false,
-
-        Dashboard :new menuButton(id = "#Dashboard", notifications = 2, page2show = ""),
-        Answered : new menuButton(id = "#Answered", notifications = 0, page2show = ""),
-        Unanswered : new menuButton(id = "#Unanswered", notifications = 0, page2show = ""),
-        Users : new menuButton(id = "#Users", notifications = 0, page2show = ""),
-        Departments : new menuButton(id = "#Departments", notifications = 0, page2show = ""),
-        Devices : new menuButton(id = "#Devices", notifications = 0, page2show = ""),
-        CallerSett : new menuButton(id = "#CallerSett", notifications = 0, page2show = ""),
-        BlockedVis : new menuButton(id = "#BlockedVis", notifications = 0, page2show = ""),
-        MyWidgets : new menuButton(id = "#MyWidgets", notifications = 0, page2show = ""),
-        Generate : new menuButton(id = "#Generate", notifications = 0, page2show = ""),
-        Billing : new menuButton(id = "#Billing", notifications = 0, page2show = ".form__main__content__billing")
+        sidebarMenu: {
+            Dashboard :new menuButton(id = "#Dashboard", notifications = 2, page2show = "", checked = false),
+            Answered : new menuButton(id = "#Answered", notifications = 0, page2show = "", checked = false),
+            Unanswered : new menuButton(id = "#Unanswered", notifications = 0, page2show = "", checked = false),
+            Users : new menuButton(id = "#Users", notifications = 0, page2show = "", checked = false),
+            Departments : new menuButton(id = "#Departments", notifications = 0, page2show = "", checked = false),
+            Devices : new menuButton(id = "#Devices", notifications = 0, page2show = "", checked = false),
+            CallerSett : new menuButton(id = "#CallerSett", notifications = 0, page2show = "", checked = false),
+            BlockedVis : new menuButton(id = "#BlockedVis", notifications = 0, page2show = "", checked = false),
+            MyWidgets : new menuButton(id = "#MyWidgets", notifications = 0, page2show = "", checked = false),
+            Generate : new menuButton(id = "#Generate", notifications = 0, page2show = "", checked = false),
+            Billing : new menuButton(id = "#Billing", notifications = 0, page2show = billing, checked = true),
+        },
+        licenseStatus : "Free trial"
     },
     methods:{
-        sidebar_show_hide:function () {
-            this.checked = ~this.checked;
-        },
         openPage: function(pushed){
-            document.querySelectorAll(".form__main__content__box").forEach(element => {
-                element.classList.add("displayNone");
-            });
-            if(pushed.page2show) document.querySelector(pushed.page2show).classList.remove("displayNone")
+            for(var variable in this.sidebarMenu)
+            {
+                if(this.sidebarMenu[variable].page2show) this.sidebarMenu[variable].page2show.close = true;
+                this.sidebarMenu[variable].checked = false;
+            }
 
-            let li = document.querySelectorAll(".form__sidebar__menu__content-sub-button");
-            li.forEach(element => {
-                element.classList.remove("form__sidebar__menu__content-sub-button-pressed");
-            });
-            
-            document.querySelector(pushed.id).classList.add("form__sidebar__menu__content-sub-button-pressed")
+            if(pushed.page2show) pushed.page2show.close = false;
+            pushed.checked = true;
         },
     }
 });
-
-
-
- 
-
