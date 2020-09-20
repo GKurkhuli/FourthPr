@@ -451,6 +451,7 @@ html{
                 right: 2.1rem;
                 & > *{
                     cursor: pointer;
+                    font-family: Lato;
                     @include centerVertical();
                 }
                 &-txt{
@@ -459,33 +460,31 @@ html{
                     width: 60.97%;
                     padding-top: .4rem;
                     border-left: 1px solid #e4e8eb;
+                    left: 0;
                     &__userName{
-                        font-family: Lato;
+                        font-weight: normal;
                         font-size: 1.4rem;
                         color: #4a4a4a;
                         line-height: 1;
                     }
                     &__userStatus{
-                        font-family: Lato;
                         font-size: 1rem;
                         font-weight: bold;
                         line-height: 1;
                         color: #bac4de;
-
                         &-online{color:#19c500}
                     }
                     
                 }
                 &-avatar{
-                    width: 3.6rem;
-                    height: 3.6rem;
+                    width: 22%;
                     border-radius: 50%;
-                    left: 11.1rem;
+                    right: 1.65rem;
                     outline: none;
                     border: 0;
                 }
                 &-drowpDown{
-                    width: .7rem;
+                    width: 4%;
                     height: 100%;
                     right: 0;
                     & img{@include center()}
