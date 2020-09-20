@@ -207,7 +207,7 @@
                                                 <p>Chat in real time with your web users</p>
                                             </div>
                                             <div class="form__main__content__billing__servicePack__price__packs__checkbox-price">
-                                                <p><span class="price__int">$4.</span><span class="price__dec">00</span><span class="price__per">/{{packs.per[pack_selected]}}.</span></p>
+                                                <p><span class="price__int">${{packs['webchat'][pack_selected].toFixed(2).split('.')[0]}}.</span><span class="price__dec">{{packs['webchat'][pack_selected].toFixed(2).split('.')[1]}}</span><span class="price__per">/{{packs.per[pack_selected]}}.</span></p>
                                             </div>
                                         </label>
                                     </div>
@@ -219,7 +219,7 @@
                                                 <p>Let your web visitors call you from browser</p>
                                             </div>
                                             <div class="form__main__content__billing__servicePack__price__packs__checkbox-price">
-                                                <p v-html = ''></p>
+                                                <p><span class="price__int">${{packs['webCall'][pack_selected].toFixed(2).split('.')[0]}}.</span><span class="price__dec">{{packs['webCall'][pack_selected].toFixed(2).split('.')[1]}}</span><span class="price__per">/{{packs.per[pack_selected]}}.</span></p>
                                             </div>
                                         </label>
                                     </div>
@@ -227,11 +227,11 @@
                                         <input type="checkbox" name="sevices" id="multiCh" v-model = "packs['multiCh'].checked">
                                         <label for="multiCh">
                                             <div class="form__main__content__billing__servicePack__price__packs__checkbox-text">
-                                                <h4>Multi Channel</h4>
+                                                <h4>{{packs['multiCh'].name}}</h4>
                                                 <p>Some text Some text Some text Some text</p>
                                             </div>
                                             <div class="form__main__content__billing__servicePack__price__packs__checkbox-price">
-
+                                                <p><span class="price__int">${{packs['multiCh'][pack_selected].toFixed(2).split('.')[0]}}.</span><span class="price__dec">{{packs['multiCh'][pack_selected].toFixed(2).split('.')[1]}}</span><span class="price__per">/{{packs.per[pack_selected]}}.</span></p>
                                             </div>
                                         </label>
                                     </div>
@@ -239,11 +239,11 @@
                                         <input type="checkbox" name="sevices" id="coBrow" v-model = "packs['coBrow'].checked">
                                         <label for="coBrow">
                                             <div class="form__main__content__billing__servicePack__price__packs__checkbox-text">
-                                                <h4>Co-Browsing</h4>
+                                                <h4>{{packs['coBrow'].name}}</h4>
                                                 <p>Guide your visitors when they struggle</p>
                                             </div>
                                             <div class="form__main__content__billing__servicePack__price__packs__checkbox-price">
-
+                                                <p><span class="price__int">${{packs['coBrow'][pack_selected].toFixed(2).split('.')[0]}}.</span><span class="price__dec">{{packs['coBrow'][pack_selected].toFixed(2).split('.')[1]}}</span><span class="price__per">/{{packs.per[pack_selected]}}.</span></p>
                                             </div>
                                         </label>
                                     </div>
@@ -261,7 +261,7 @@
                                                 <p>{{items.name}}</p>
                                             </div>
                                             <div class="calcPrice__List__price form__main__content__billing__servicePack__calcPr__price__each__price">
-                                                <p><span class="list-price-int">$10.</span><span class="list-price-dec">00</span><span class="list-price-per">/{{packs.per[pack_selected]}}</span><span class="list-price-question"><ion-icon name="help-circle-outline"></ion-icon></span></p>
+                                                <p><span class="list-price-int">${{packs[items.id][pack_selected].toFixed(2).split('.')[0]}}.</span><span class="list-price-dec">{{packs[items.id][pack_selected].toFixed(2).split('.')[1]}}</span><span class="list-price-per">/{{packs.per[pack_selected]}}</span><span class="list-price-question"><ion-icon name="help-circle-outline"></ion-icon></span></p>
                                             </div>
                                         </li>
                                     </ul>
@@ -278,7 +278,7 @@
                                             <p>Total</p>
                                         </div>
                                         <div class="calcPrice__List__price form__main__content__billing__servicePack__calcPr__static__total__price">
-                                            <p><span class="price__int">$4.</span><span class="price__dec">00</span><span class="price__per">/{{packs.per[pack_selected]}}.</span><span class="price__for">(x{{ agentNumber }} users)</span></p>
+                                            <p><span class="price__int">${{priceTotal.toFixed(2).split('.')[0]}}.</span><span class="price__dec">{{priceTotal.toFixed(2).split('.')[1]}}</span><span class="price__per">/{{packs.per[pack_selected]}}.</span><span class="price__for">(x{{ agentNumber }} users)</span></p>
                                         </div>
                                     </div>
                                     <button class="upgradeButton form__main__content__billing__servicePack__calcPr__static__button">UPGRADE</button>

@@ -64,7 +64,8 @@ var billing = new Vue({
                 checked : false
             }
         },
-        priceTotal: 0,   
+        priceTotal: 0,
+        price2Pay : 0   
     },
     methods:{
         incAgentNum: function(){
@@ -74,8 +75,8 @@ var billing = new Vue({
             if(this.agentNumber > 1) this.agentNumber -= 1
         },
         changeagentNumber: function(){
+            if(this.agentNumber < 1) this.agentNumber = 1;
             this.agentNumber = parseInt(this.agentNumber);
-            if(this.agentNumber < 1) this.agentNumber = 1
         },
         closePage: function(){
             this.close = true;
@@ -92,6 +93,7 @@ var billing = new Vue({
 
             selectedPacks.forEach(element => {
                 this.priceTotal += element[this.pack_selected];
+                this.price2Pay = this.priceTotal*this.agentNumber;
             });
             return selectedPacks
         },
