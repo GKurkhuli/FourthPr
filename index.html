@@ -200,34 +200,34 @@
                                 </div>
                                 <div class="form__main__content__billing__servicePack__price__packs">
                                     <div class="form__main__content__billing__servicePack__price__packs__checkbox">
-                                        <input type="checkbox" name="sevices" id="chat" checked>
+                                        <input type="checkbox" name="sevices" id="chat" v-model = "packs['webchat'].checked">
                                         <label for="chat">
                                             <div class="form__main__content__billing__servicePack__price__packs__checkbox-text">
                                                 <h4>Web Chat</h4>
                                                 <p>Chat in real time with your web users</p>
                                             </div>
                                             <div class="form__main__content__billing__servicePack__price__packs__checkbox-price">
-                                                <p><span class="price__int">$4.</span><span class="price__dec">00</span><span class="price__per">/{{prices[[pack_selected]].per}}.</span></p>
+                                                <p><span class="price__int">$4.</span><span class="price__dec">00</span><span class="price__per">/{{packs.per[pack_selected]}}.</span></p>
                                             </div>
                                         </label>
                                     </div>
                                     <div class="form__main__content__billing__servicePack__price__packs__checkbox">
-                                        <input type="checkbox"  name="sevices" id="call">
+                                        <input type="checkbox"  name="sevices" id="call" v-model = "packs['webCall'].checked">
                                         <label for="call">
                                             <div class="form__main__content__billing__servicePack__price__packs__checkbox-text">
-                                                <h4>Web Call</h4>
+                                                <h4>{{packs['webCall'].name}}</h4>
                                                 <p>Let your web visitors call you from browser</p>
                                             </div>
                                             <div class="form__main__content__billing__servicePack__price__packs__checkbox-price">
-
+                                                <p v-html = ''></p>
                                             </div>
                                         </label>
                                     </div>
                                     <div class="form__main__content__billing__servicePack__price__packs__checkbox">
-                                        <input type="checkbox" name="sevices" id="multyCh">
-                                        <label for="multyCh">
+                                        <input type="checkbox" name="sevices" id="multiCh" v-model = "packs['multiCh'].checked">
+                                        <label for="multiCh">
                                             <div class="form__main__content__billing__servicePack__price__packs__checkbox-text">
-                                                <h4>Multy Channel</h4>
+                                                <h4>Multi Channel</h4>
                                                 <p>Some text Some text Some text Some text</p>
                                             </div>
                                             <div class="form__main__content__billing__servicePack__price__packs__checkbox-price">
@@ -236,7 +236,7 @@
                                         </label>
                                     </div>
                                     <div class="form__main__content__billing__servicePack__price__packs__checkbox">
-                                        <input type="checkbox" name="sevices" id="coBrow" checked>
+                                        <input type="checkbox" name="sevices" id="coBrow" v-model = "packs['coBrow'].checked">
                                         <label for="coBrow">
                                             <div class="form__main__content__billing__servicePack__price__packs__checkbox-text">
                                                 <h4>Co-Browsing</h4>
@@ -253,16 +253,18 @@
                                 <div class="form__main__content__billing__servicePack__calcPr__topTxt">
                                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa ullam illo, id quas quam unde, officiis rerum voluptatem in</p>
                                 </div>
-
+                                
                                 <div class="form__main__content__billing__servicePack__calcPr__price">
-                                    <div class="form__main__content__billing__servicePack__calcPr__price__each">
-                                        <div class="calcPrice__List__name form__main__content__billing__servicePack__calcPr__price__each__name">
-                                            <p>Platform Price</p>
-                                        </div>
-                                        <div class="calcPrice__List__price form__main__content__billing__servicePack__calcPr__price__each__price">
-                                            <p><span class="list-price-int">$10.</span><span class="list-price-dec">00</span><span class="list-price-per">/{{prices[[pack_selected]].per}}</span><span class="list-price-question"><ion-icon name="help-circle-outline"></ion-icon></span></p>
-                                        </div>
-                                    </div>
+                                    <ul>
+                                        <li class="form__main__content__billing__servicePack__calcPr__price__each" v-for = "items in selected">
+                                            <div class="calcPrice__List__name form__main__content__billing__servicePack__calcPr__price__each__name">
+                                                <p>{{items.name}}</p>
+                                            </div>
+                                            <div class="calcPrice__List__price form__main__content__billing__servicePack__calcPr__price__each__price">
+                                                <p><span class="list-price-int">$10.</span><span class="list-price-dec">00</span><span class="list-price-per">/{{packs.per[pack_selected]}}</span><span class="list-price-question"><ion-icon name="help-circle-outline"></ion-icon></span></p>
+                                            </div>
+                                        </li>
+                                    </ul>
                                 </div>
 
                                 <div class="form__main__content__billing__servicePack__calcPr__static">
@@ -276,7 +278,7 @@
                                             <p>Total</p>
                                         </div>
                                         <div class="calcPrice__List__price form__main__content__billing__servicePack__calcPr__static__total__price">
-                                            <p><span class="price__int">$4.</span><span class="price__dec">00</span><span class="price__per">/{{prices[[pack_selected]].per}}.</span><span class="price__for">(x{{ agentNumber }} users)</span></p>
+                                            <p><span class="price__int">$4.</span><span class="price__dec">00</span><span class="price__per">/{{packs.per[pack_selected]}}.</span><span class="price__for">(x{{ agentNumber }} users)</span></p>
                                         </div>
                                     </div>
                                     <button class="upgradeButton form__main__content__billing__servicePack__calcPr__static__button">UPGRADE</button>

@@ -21,24 +21,50 @@ var billing = new Vue({
         agentNumber: 1,
         close : false,
         pack_selected : "Annually",
-        prices: {
-            "Annually":{
-                platform : 10,
-                webChat : 4,
-                webCall : 3,
-                multyCh : 5,
-                coBrow : 0,
-                per : "yr"
+
+        packs: {
+            "platform" : {
+                id: "platform",
+                name: "Platform price",
+                "Annually": 10.0,
+                "Monthly": 5.0,
+                checked : true
             },
-            "Monthly":{
-                platform : 5,
-                webChat : 2,
-                webCall : 1,
-                multyCh : 2,
-                coBrow : 0,
-                per : "mo"
+            "webchat" : {
+                id: "webchat",
+                name: "Web Chat",
+                "Annually": 4.0,
+                "Monthly": 2.0,
+                checked : true
+            },
+            "webCall": {
+                id: "webCall",
+                name: "Web Call",
+                "Annually":3.0,
+                "Monthly": 1.0,
+                checked : false
+            },
+            "multiCh": {
+                id: "multiCh",
+                name: "Multi Channel",
+                "Annually": 5.0,
+                "Monthly":2.0,
+                checked : false
+            },
+            "coBrow" : {
+                id: "coBrow",
+                name: "Co-browsing",
+                "Annually": 0.0,
+                "Monthly": 0.0,
+                checked : true
+            },
+            per : {
+                "Annually": "yr",
+                "Monthly": "mo",
+                checked : false
             }
-        }
+        },
+        priceTotal: 0,   
     },
     methods:{
         incAgentNum: function(){
@@ -53,6 +79,26 @@ var billing = new Vue({
         closePage: function(){
             this.close = true;
             sidebar.sidebarMenu.Billing.checked = false;
+        },
+    },
+    computed:{
+        selected(){
+            let selectedPacks = [];
+            this.priceTotal = 0;
+            for(var variable in this.packs)
+                if(this.packs[variable].checked)
+                    selectedPacks.push(this.packs[variable]);
+
+            selectedPacks.forEach(element => {
+                this.priceTotal += element[this.pack_selected];
+            });
+            return selectedPacks
+        },
+        priceCheckbox(Name){
+            return '<span class="price__int">$'+this.packs[Name][this.pack_selected]+'.</span><span class="price__dec">'+ +'</span><span class="price__per">/'+ this.packs.per[this.pack_selected]+'.</span>'
+        },
+        priceCalck(id){
+            return '<span class="list-price-int">$'+this.packs[id][this.pack_selected]+'.</span><span class="list-price-dec">'+ +'</span><span class="list-price-per">/'+ this.packs.per[this.pack_selected]+'.</span><span class="list-price-question"><ion-icon name="help-circle-outline"></ion-icon></span>'
         }
     }
 })
