@@ -27,28 +27,28 @@ var billing = new Vue({
                 id: "platform",
                 name: "Platform price",
                 "Annually": 10.0,
-                "Monthly": 5.0,
+                "Monthly": 1.2,
                 checked : true
             },
             "webchat" : {
                 id: "webchat",
                 name: "Web Chat",
                 "Annually": 4.0,
-                "Monthly": 2.0,
+                "Monthly": 0.47,
                 checked : true
             },
             "webCall": {
                 id: "webCall",
                 name: "Web Call",
                 "Annually":3.0,
-                "Monthly": 1.0,
+                "Monthly": 0.36,
                 checked : false
             },
             "multiCh": {
                 id: "multiCh",
                 name: "Multi Channel",
                 "Annually": 5.0,
-                "Monthly":2.0,
+                "Monthly":0.6,
                 checked : false
             },
             "coBrow" : {
