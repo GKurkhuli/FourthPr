@@ -74,6 +74,7 @@ var billing = new Vue({
             if(this.agentNumber > 1) this.agentNumber -= 1
         },
         changeagentNumber: function(){
+            this.agentNumber = parseInt(this.agentNumber);
             if(this.agentNumber < 1) this.agentNumber = 1
         },
         closePage: function(){
