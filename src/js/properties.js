@@ -21,7 +21,6 @@ var billing = new Vue({
         agentNumber: 1,
         close : false,
         pack_selected : "Annually",
-
         packs: {
             "platform" : {
                 id: "platform",
@@ -119,32 +118,42 @@ class menuButton{
 var sidebar = new Vue({
     el: ".form__sidebar",
     data:{
+        opened: "Billing",
         checked: false,
         sidebarMenu: {
-            Dashboard :new menuButton(id = "#Dashboard", notifications = 2, page2show = "", checked = false),
-            Answered : new menuButton(id = "#Answered", notifications = 0, page2show = "", checked = false),
-            Unanswered : new menuButton(id = "#Unanswered", notifications = 0, page2show = "", checked = false),
-            Users : new menuButton(id = "#Users", notifications = 0, page2show = "", checked = false),
-            Departments : new menuButton(id = "#Departments", notifications = 0, page2show = "", checked = false),
-            Devices : new menuButton(id = "#Devices", notifications = 0, page2show = "", checked = false),
-            CallerSett : new menuButton(id = "#CallerSett", notifications = 0, page2show = "", checked = false),
-            BlockedVis : new menuButton(id = "#BlockedVis", notifications = 0, page2show = "", checked = false),
-            MyWidgets : new menuButton(id = "#MyWidgets", notifications = 0, page2show = "", checked = false),
-            Generate : new menuButton(id = "#Generate", notifications = 0, page2show = "", checked = false),
-            Billing : new menuButton(id = "#Billing", notifications = 0, page2show = billing, checked = true),
+            "Dashboard" :new menuButton(id = "Dashboard", notifications = 2, page2show = "", checked = false),
+            "Answered" : new menuButton(id = "Answered", notifications = 0, page2show = "", checked = false),
+            "Unanswered" : new menuButton(id = "Unanswered", notifications = 0, page2show = "", checked = false),
+            "Users" : new menuButton(id = "Users", notifications = 0, page2show = "", checked = false),
+            "Departments" : new menuButton(id = "Departments", notifications = 0, page2show = "", checked = false),
+            "Devices" : new menuButton(id = "Devices", notifications = 0, page2show = "", checked = false),
+            "CallerSett" : new menuButton(id = "CallerSett", notifications = 0, page2show = "", checked = false),
+            "BlockedVis" : new menuButton(id = "BlockedVis", notifications = 0, page2show = "", checked = false),
+            "MyWidgets" : new menuButton(id = "MyWidgets", notifications = 0, page2show = "", checked = false),
+            "Generate" : new menuButton(id = "Generate", notifications = 0, page2show = "", checked = false),
+            "Billing" : new menuButton(id = "Billing", notifications = 0, page2show = billing, checked = true),
         },
         licenseStatus : "Free trial"
     },
     methods:{
         openPage: function(pushed){
-            for(var variable in this.sidebarMenu)
+            /*for(var variable in this.sidebarMenu)
             {
                 if(this.sidebarMenu[variable].page2show) this.sidebarMenu[variable].page2show.close = true;
                 this.sidebarMenu[variable].checked = false;
             }
 
             if(pushed.page2show) pushed.page2show.close = false;
-            pushed.checked = true;
+            pushed.checked = true;*/
+
+            if(this.sidebarMenu[this.opened].page2show) this.sidebarMenu[this.opened].page2show.close = true;
+            this.sidebarMenu[this.opened].checked = false;
+
+            this.opened = pushed;
+            if(this.sidebarMenu[this.opened].page2show) this.sidebarMenu[this.opened].page2show.close = false;
+            this.sidebarMenu[this.opened].checked = true;
+
+
         },
     }
 });

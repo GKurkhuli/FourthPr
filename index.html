@@ -25,10 +25,10 @@
                             <li>General
                                 <ul class = "form__sidebar__menu__content-sub">
                                     <li>    
-                                        <button class="form__sidebar__menu__content-sub-button" v-bind:class = "{'form__sidebar__menu__content-sub-button-pressed':sidebarMenu.Dashboard.checked}" id="Dashboard" v-on:click = "openPage(sidebarMenu.Dashboard)">
+                                        <button class="form__sidebar__menu__content-sub-button" v-bind:class = "{'form__sidebar__menu__content-sub-button-pressed':sidebarMenu['Dashboard'].checked}" id="Dashboard" v-on:click = "openPage('Dashboard')">
                                             <div class="form__sidebar__menu__content-sub-button-logo"><img src="src/img/SVG/Icon_dash.svg" alt=""></div>
                                             <div class="form__sidebar__menu__content-sub-button-description"><p>Dashboard</p></div>
-                                            <div class="form__sidebar__menu__content-sub-button-num" v-show = "sidebarMenu.Dashboard.notifications > 0"><p>{{sidebarMenu.Dashboard.notifications}}</p></div>
+                                            <div class="form__sidebar__menu__content-sub-button-num" v-show = "sidebarMenu['Dashboard'].notifications > 0"><p>{{sidebarMenu['Dashboard'].notifications}}</p></div>
                                         </button>
                                     </li>
                                 </ul>
@@ -36,17 +36,17 @@
                             <li>Analytics
                                 <ul class = "form__sidebar__menu__content-sub">
                                     <li>    
-                                        <button class="form__sidebar__menu__content-sub-button" v-bind:class = "{'form__sidebar__menu__content-sub-button-pressed':sidebarMenu.Answered.checked}" id="Answered" v-on:click = "openPage(sidebarMenu.Answered)">
+                                        <button class="form__sidebar__menu__content-sub-button" v-bind:class = "{'form__sidebar__menu__content-sub-button-pressed':sidebarMenu['Answered'].checked}" id="Answered" v-on:click = "openPage('Answered')">
                                             <div class="form__sidebar__menu__content-sub-button-logo"><img src="src/img/SVG/chart-bar.svg" alt=""></div>
                                             <div class="form__sidebar__menu__content-sub-button-description"><p>Answered</p></div>
-                                            <div class="form__sidebar__menu__content-sub-button-num" v-show = "sidebarMenu.Answered.notifications > 0"><p>{{sidebarMenu.Answered.notifications}}</p></div>
+                                            <div class="form__sidebar__menu__content-sub-button-num" v-show = "sidebarMenu['Answered'].notifications > 0"><p>{{sidebarMenu['Answered'].notifications}}</p></div>
                                         </button>
                                     </li>
                                     <li>    
-                                        <button class="form__sidebar__menu__content-sub-button" v-bind:class = "{'form__sidebar__menu__content-sub-button-pressed':sidebarMenu.Unanswered.checked}" id="Unanswered" v-on:click = "openPage(sidebarMenu.Unanswered)">
+                                        <button class="form__sidebar__menu__content-sub-button" v-bind:class = "{'form__sidebar__menu__content-sub-button-pressed':sidebarMenu['Unanswered'].checked}" id="Unanswered" v-on:click = "openPage(sidebarMenu.Unanswered)">
                                             <div class="form__sidebar__menu__content-sub-button-logo"><img src="src/img/SVG/Chart-line.svg" alt=""></div>
                                             <div class="form__sidebar__menu__content-sub-button-description"><p>Unanswered</p></div>
-                                            <div class="form__sidebar__menu__content-sub-button-num" v-show = "sidebarMenu.Unanswered.notifications > 0"><p>{{sidebarMenu.Unanswered.notifications}}</p></div>
+                                            <div class="form__sidebar__menu__content-sub-button-num" v-show = "sidebarMenu['Unanswered'].notifications > 0"><p>{{sidebarMenu['Unanswered'].notifications}}</p></div>
                                         </button>
                                     </li>
                                 </ul>
@@ -54,24 +54,24 @@
                             <li>Team Management
                                 <ul class = "form__sidebar__menu__content-sub">
                                     <li>    
-                                        <button class="form__sidebar__menu__content-sub-button" v-bind:class = "{'form__sidebar__menu__content-sub-button-pressed':sidebarMenu.Users.checked}" id="Users" v-on:click = "openPage(sidebarMenu.Users)">
+                                        <button class="form__sidebar__menu__content-sub-button" v-bind:class = "{'form__sidebar__menu__content-sub-button-pressed':sidebarMenu['Users'].checked}" id="Users" v-on:click = "openPage('Users')">
                                             <div class="form__sidebar__menu__content-sub-button-logo"><img src="src/img/SVG/Users.svg" alt=""></div>
                                             <div class="form__sidebar__menu__content-sub-button-description"><p>Users</p></div>
-                                            <div class="form__sidebar__menu__content-sub-button-num" v-show = "sidebarMenu.Users.notifications > 0"><p>{{sidebarMenu.Users.notifications}}</p></div>
+                                            <div class="form__sidebar__menu__content-sub-button-num" v-show = "sidebarMenu['Users'].notifications > 0"><p>{{sidebarMenu['Users'].notifications}}</p></div>
                                         </button>
                                     </li>
                                     <li>    
-                                        <button class="form__sidebar__menu__content-sub-button" v-bind:class = "{'form__sidebar__menu__content-sub-button-pressed':sidebarMenu.Departments.checked}" id="Departments" v-on:click = "openPage(sidebarMenu.Departments)">
+                                        <button class="form__sidebar__menu__content-sub-button" v-bind:class = "{'form__sidebar__menu__content-sub-button-pressed':sidebarMenu['Departments'].checked}" id="Departments" v-on:click = "openPage('Departments')">
                                             <div class="form__sidebar__menu__content-sub-button-logo"><img src="src/img/SVG/Departments.svg" alt=""></div>
                                             <div class="form__sidebar__menu__content-sub-button-description"><p>Departments</p></div>
-                                            <div class="form__sidebar__menu__content-sub-button-num" v-show = "sidebarMenu.Departments.notifications > 0"><p>{{sidebarMenu.Departments.notifications}}</p></div>
+                                            <div class="form__sidebar__menu__content-sub-button-num" v-show = "sidebarMenu['Departments'].notifications > 0"><p>{{sidebarMenu['Departments'].notifications}}</p></div>
                                         </button>
                                     </li>
                                     <li>    
-                                        <button class="form__sidebar__menu__content-sub-button" v-bind:class = "{'form__sidebar__menu__content-sub-button-pressed':sidebarMenu.Devices.checked}" id="Devices" v-on:click = "openPage(sidebarMenu.Devices)">
+                                        <button class="form__sidebar__menu__content-sub-button" v-bind:class = "{'form__sidebar__menu__content-sub-button-pressed':sidebarMenu['Devices'].checked}" id="Devices" v-on:click = "openPage('Devices')">
                                             <div class="form__sidebar__menu__content-sub-button-logo"><img src="src/img/SVG/Devices.svg" alt=""></div>
                                             <div class="form__sidebar__menu__content-sub-button-description"><p>Devices</p></div>
-                                            <div class="form__sidebar__menu__content-sub-button-num" v-show = "sidebarMenu.Devices.notifications > 0"><p>{{sidebarMenu.Devices.notifications}}</p></div>
+                                            <div class="form__sidebar__menu__content-sub-button-num" v-show = "sidebarMenu['Devices'].notifications > 0"><p>{{sidebarMenu['Devices'].notifications}}</p></div>
                                         </button>
                                     </li>
                                 </ul>
@@ -79,17 +79,17 @@
                             <li>Visitors
                                 <ul class = "form__sidebar__menu__content-sub">
                                     <li>    
-                                        <button class="form__sidebar__menu__content-sub-button" v-bind:class = "{'form__sidebar__menu__content-sub-button-pressed':sidebarMenu.CallerSett.checked}" id="CallerSett" v-on:click = "openPage(sidebarMenu.CallerSett)">
+                                        <button class="form__sidebar__menu__content-sub-button" v-bind:class = "{'form__sidebar__menu__content-sub-button-pressed':sidebarMenu['CallerSett'].checked}" id="CallerSett" v-on:click = "openPage('CallerSett')">
                                             <div class="form__sidebar__menu__content-sub-button-logo"><img src="src/img/SVG/CallerSettings.svg" alt=""></div>
                                             <div class="form__sidebar__menu__content-sub-button-description"><p>Caller settings</p></div>
-                                            <div class="form__sidebar__menu__content-sub-button-num" v-show = "sidebarMenu.CallerSett.notifications > 0"><p>{{sidebarMenu.CallerSett.notifications}}</p></div>
+                                            <div class="form__sidebar__menu__content-sub-button-num" v-show = "sidebarMenu['CallerSett'].notifications > 0"><p>{{sidebarMenu['CallerSett'].notifications}}</p></div>
                                         </button>
                                     </li>
                                     <li>    
-                                        <button class="form__sidebar__menu__content-sub-button" v-bind:class = "{'form__sidebar__menu__content-sub-button-pressed':sidebarMenu.BlockedVis.checked}" id="BlockedVis" v-on:click = "openPage(sidebarMenu.BlockedVis)">
+                                        <button class="form__sidebar__menu__content-sub-button" v-bind:class = "{'form__sidebar__menu__content-sub-button-pressed':sidebarMenu['BlockedVis'].checked}" id="BlockedVis" v-on:click = "openPage('BlockedVis')">
                                             <div class="form__sidebar__menu__content-sub-button-logo"><img src="src/img/SVG/BlockedVisit.svg" alt=""></div>
                                             <div class="form__sidebar__menu__content-sub-button-description"><p>Blocked visitors</p></div>
-                                            <div class="form__sidebar__menu__content-sub-button-num" v-show = "sidebarMenu.BlockedVis.notifications > 0"><p>{{sidebarMenu.BlockedVis.notifications}}</p></div>
+                                            <div class="form__sidebar__menu__content-sub-button-num" v-show = "sidebarMenu['BlockedVis'].notifications > 0"><p>{{sidebarMenu['BlockedVis'].notifications}}</p></div>
                                         </button>
                                     </li>
                                 </ul>
@@ -97,17 +97,17 @@
                             <li>Widgets
                                 <ul class = "form__sidebar__menu__content-sub">
                                     <li>    
-                                        <button class="form__sidebar__menu__content-sub-button" v-bind:class = "{'form__sidebar__menu__content-sub-button-pressed':sidebarMenu.MyWidgets.checked}" id="MyWidgets" v-on:click = "openPage(sidebarMenu.MyWidgets)">
+                                        <button class="form__sidebar__menu__content-sub-button" v-bind:class = "{'form__sidebar__menu__content-sub-button-pressed':sidebarMenu['MyWidgets'].checked}" id="MyWidgets" v-on:click = "openPage('MyWidgets')">
                                             <div class="form__sidebar__menu__content-sub-button-logo"><img src="src/img/SVG/MyWidgets.svg" alt=""></div>
                                             <div class="form__sidebar__menu__content-sub-button-description"><p>My widgets</p></div>
-                                            <div class="form__sidebar__menu__content-sub-button-num" v-show = "sidebarMenu.MyWidgets.notifications > 0"><p>{{sidebarMenu.MyWidgets.notifications}}</p></div>
+                                            <div class="form__sidebar__menu__content-sub-button-num" v-show = "sidebarMenu['MyWidgets'].notifications > 0"><p>{{sidebarMenu['MyWidgets'].notifications}}</p></div>
                                         </button>
                                     </li>
                                     <li>    
-                                        <button class="form__sidebar__menu__content-sub-button" v-bind:class = "{'form__sidebar__menu__content-sub-button-pressed':sidebarMenu.Generate.checked}" id="Generate" v-on:click = "openPage(sidebarMenu.Generate)">
+                                        <button class="form__sidebar__menu__content-sub-button" v-bind:class = "{'form__sidebar__menu__content-sub-button-pressed':sidebarMenu['Generate'].checked}" id="Generate" v-on:click = "openPage('Generate')">
                                             <div class="form__sidebar__menu__content-sub-button-logo"><img src="src/img/SVG/Generate.svg" alt=""></div>
                                             <div class="form__sidebar__menu__content-sub-button-description"><p>Generate</p></div>
-                                            <div class="form__sidebar__menu__content-sub-button-num" v-show = "sidebarMenu.Generate.notifications > 0"><p>{{sidebarMenu.Generate.notifications}}</p></div>
+                                            <div class="form__sidebar__menu__content-sub-button-num" v-show = "sidebarMenu['Generate'].notifications > 0"><p>{{sidebarMenu['Generate'].notifications}}</p></div>
                                         </button>
                                     </li>
                                 </ul>
@@ -115,10 +115,10 @@
                             <li>Account
                                 <ul class = "form__sidebar__menu__content-sub">
                                     <li>    
-                                        <button class="form__sidebar__menu__content-sub-button" v-bind:class = "{'form__sidebar__menu__content-sub-button-pressed':sidebarMenu.Billing.checked}" id="Billing" v-on:click = "openPage(sidebarMenu.Billing)">
+                                        <button class="form__sidebar__menu__content-sub-button" v-bind:class = "{'form__sidebar__menu__content-sub-button-pressed':sidebarMenu['Billing'].checked}" id="Billing" v-on:click = "openPage('Billing')">
                                             <div class="form__sidebar__menu__content-sub-button-logo"><img src="src/img/SVG/account_balance_wallet.svg" alt=""></div>
                                             <div class="form__sidebar__menu__content-sub-button-description"><p>Billing</p></div>
-                                            <div class="form__sidebar__menu__content-sub-button-num" v-show = "sidebarMenu.Billing.notifications > 0"><p>{{sidebarMenu.Billing.notifications}}</p></div>
+                                            <div class="form__sidebar__menu__content-sub-button-num" v-show = "sidebarMenu['Billing'].notifications > 0"><p>{{sidebarMenu['Billing'].notifications}}</p></div>
                                         </button>
                                     </li>
                                 </ul>
