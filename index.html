@@ -43,7 +43,7 @@
                                         </button>
                                     </li>
                                     <li>    
-                                        <button class="form__sidebar__menu__content-sub-button" v-bind:class = "{'form__sidebar__menu__content-sub-button-pressed':sidebarMenu['Unanswered'].checked}" id="Unanswered" v-on:click = "openPage(sidebarMenu.Unanswered)">
+                                        <button class="form__sidebar__menu__content-sub-button" v-bind:class = "{'form__sidebar__menu__content-sub-button-pressed':sidebarMenu['Unanswered'].checked}" id="Unanswered" v-on:click = "openPage('Unanswered')">
                                             <div class="form__sidebar__menu__content-sub-button-logo"><img src="src/img/SVG/Chart-line.svg" alt=""></div>
                                             <div class="form__sidebar__menu__content-sub-button-description"><p>Unanswered</p></div>
                                             <div class="form__sidebar__menu__content-sub-button-num" v-show = "sidebarMenu['Unanswered'].notifications > 0"><p>{{sidebarMenu['Unanswered'].notifications}}</p></div>
